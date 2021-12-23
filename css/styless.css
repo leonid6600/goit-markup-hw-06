@@ -1,0 +1,1099 @@
+:root {
+    --brand-color: #2196F3;
+    --text: #757575;
+    --title: #212121;
+    --bg-color: #ffffff;
+    --secondary-bg-color:#F5F4FA;
+    --third-bg-color: #2F303A;
+}
+
+body {
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    /* Основной цвет текста */
+    color:var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    /* Основной цвет фона #ffffff */
+    background-color:var(--bg-color);
+    margin: 0;
+}
+
+/* Отмена стилей по умолчанию */
+a {text-decoration:none;}
+
+ul {
+    list-style:none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,h2,h3,p {margin: 0;}
+
+/* Глобальное придание всем елемента типа рассчета блочных элементов border-box 
+Правильно делать именно так!!!!!!!!!!! */
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing:inherit;
+}
+
+/* Для ровности цифр в строке */
+*{font-variant-numeric:lining-nums;}
+
+/* Придание выделению определенного цвета */
+*::selection {
+color: #ffffff;
+background-color:var(--brand-color);
+}
+
+/* Класс для всех обычных ссылок */
+.primary,
+button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Классы для быстрой раскраски в фирменные цвета */
+.blue {color:var(--brand-color);}
+
+.white-color {color:var(--bg-color);}
+
+.black-color {color:#000000;}
+
+/* основной цвет заголовков */
+.title {color:var(--title);}
+
+
+
+
+
+
+/* Основной стиль блоков сайта */
+.container {
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto; 
+    /* outline: 1px dashed #f44336; */
+}
+
+
+
+
+/* Лого */
+.logo{
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+}
+
+
+
+
+/* Кнопки сайта */
+.button {
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 0;
+    /* border: 1px solid transparent; */
+}
+
+
+
+
+/* Хедер */
+.header {
+    border-bottom: 1px solid #ECECEC;
+}
+
+.header .container{
+    display: flex;
+    align-items: center;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav .logo{
+    margin-top: 24px;
+    margin-bottom: 25px;
+}
+
+.header-menu{
+    display: flex;
+    margin-left: 93px;
+}
+
+/* .header-menu .link:not(:last-child){
+    margin-right: 50px;} */
+/* Лучше писать так: */
+.header-menu .link + .link{
+    margin-left: 50px;
+}
+
+.header-menu a{
+    font-weight: 500;
+    font-size: 14px;
+    color:var(--title);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Стили для состояний ссылок меню при наведении мыши */
+.header-menu a:hover,
+.header-menu a:focus{
+    color:var(--brand-color);
+
+}
+
+/* Текущая (а потому активная) ссылка в навигации */
+.header-menu .current {
+    position: relative;
+    color:var(--brand-color);
+}
+
+.header-menu .current::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -33px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--brand-color);
+}
+
+.header-connection{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.header-connection .link + .link{
+    margin-left: 50px;
+}
+
+.header-connection a{
+    font-weight: 500;
+    font-size: 14px;
+    color:var(--text);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+}
+
+/* Сами элементы before и after строчные (inline), но мы не задали здесь им display: inline-block; 
+потому что их родительскому класу уже присвоен display: flex; который они унаследовали*/
+/* .header-connection .mail::before{
+    width: 16px;
+    height: 12px;
+    content: "";
+    color: var(--text);
+    margin-right: 10px;
+    background-image: url(../images/icon/icon-mail.svg);
+    background-size: contain;
+}
+
+.header-connection .tel::before{
+    width: 10px;
+    height: 16px;
+    content: "";
+    color: var(--text);
+    margin-right: 10px;
+    background-image: url(../images/icon/icon-tel.svg);
+    background-size: contain;
+} */
+
+.header-connection .icon{
+    display: flex;
+    align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-connection .icon:hover,
+.header-connection .icon:focus{
+    color: var(--brand-color);
+}
+
+
+/* Свойство fill: currentColor; чтобы иконка просто наследовала цвет родителя))) */
+.unit{
+    margin-right: 10px;
+    /* fill: var(--text); */
+    fill: currentColor;
+}
+
+
+/* Герой секция */
+.hero{
+    padding-top: 200px; 
+    padding-bottom: 200px; 
+    
+    max-width: 1600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: 
+    linear-gradient(to right, rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)), 
+    url(../images/album/hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    background-color: var(--third-bg-color); 
+}
+
+.hero .button{
+    display: block;
+    color: var(--bg-color);
+    background-color: var(--brand-color);
+    padding: 10px 32px;
+    margin: 0px auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero .button:hover,
+.hero .button:focus {
+    background-color:#188CE8;
+}
+
+.text-hero{
+    color:#ffffff;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+/* Преимущества секция */
+.advantage{
+    padding-top: 94px; 
+    padding-bottom: 94px; 
+}
+
+.advantage-list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.advantage-card{
+    width: calc((100% - 90px)/4);
+}
+
+/* .advantage-card::before{
+    display: inline-block; 
+    width: 270px;
+    height: 120px;
+    content: "";
+    background-repeat: no-repeat;
+    background-color: var(--secondary-bg-color);
+    background-position: 50% 50%;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.advantage-list .antenna::before{
+background-image: url(../images/icon/icon-antenna.svg);
+}
+
+.advantage-list .clock::before{
+    background-image: url(../images/icon/icon-clock.svg);
+}
+
+.advantage-list .diagram::before{
+    background-image: url(../images/icon/icon-diagram.svg);
+}
+
+.advantage-list .astronaut::before{
+    background-image: url(../images/icon/icon-astronaut.svg);
+} */
+
+.advantage-card + .advantage-card{
+    margin-left: 30px;
+}
+
+.advantage h3 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1.1;
+    text-transform: uppercase;
+}
+
+.advan{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 120px;
+    background-color: var(--secondary-bg-color);
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+/* Услуги секция */
+.services{
+    padding-bottom: 94px;
+}
+
+.services-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    line-height: 0;
+}
+
+
+
+.services-list .link{
+    position: relative;
+    display: flex;
+}
+
+
+.services-list .services-headline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    padding-top: 27px;
+
+    background-color: rgba(47, 48, 58, 0.8);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+
+
+.services h2{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+
+
+/* Команда секция */
+.team{
+    background-color: var(--secondary-bg-color);
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.team-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.team-card{
+    display: block;
+    font-size: 0;
+    background-color: var(--bg-color);
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.team-description{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+
+
+.team h2{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-card h3 {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.18;
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
+}
+
+.team-card p{
+    font-size: 16px;
+    text-align: center;
+    color: var(--text);
+    line-height: 1.18;
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+}
+
+
+
+/* Соц.сети иконки в команде */
+.social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.social-icons .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    fill: #AFB1B8;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icons li + li{
+    margin-left: 10px;
+}
+
+.social-icons .icons:hover,
+.social-icons .icons:focus{
+    fill: var(--bg-color);
+    background-color: var(--brand-color);
+}
+
+
+
+
+
+
+/* Постоянные клиенты секция */
+.clients{
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.clients h2{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.companies{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.companies li + li{
+margin-left: 30px;
+}
+
+.company{
+    display: flex;
+    width: 170px;
+    height: 92px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.company:hover,
+.company:focus{
+    fill: var(--brand-color);
+    border: 1px solid var(--brand-color);
+}
+
+
+
+
+
+/* Страница портфолио */
+/* Портфолио секция */
+.portfolio-page{
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+/* Блок фильтра потфолио */
+.button-nav{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.button-nav .button{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    padding: 6px 22px;
+}
+
+.button-nav .bt + .bt{
+    margin-left: 8px;
+}
+
+/* Стилизация кнопок блока фильтра */
+.button-nav .primary {
+    color: var(--title);
+    background-color:var(--secondary-bg-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-nav .primary:hover,
+.button-nav .primary:focus {
+    color: var(--bg-color);
+    background-color:var(--brand-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.button-nav .secondary {
+    color: var(--bg-color);
+    background-color:var(--brand-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-nav .secondary:hover,
+.button-nav .secondary:focus {
+    background-color:#188CE8;
+}
+
+
+
+
+
+/* Карточка работы в портфолио */
+.portfolio-cards{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+/* .portfolio-card{
+    width: 370px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+} */
+/* Правильнее задать ширину в процентах!!! */
+/* calc((100% - кол-во маржинов в строке * значение маржина) / кол-во элементов в строке */
+.portfolio-card{
+    display: block;
+    font-size: 0;
+    width: calc((100% - 60px)/3);
+    margin-right: 30px;
+    margin-bottom: 30px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card:nth-child(3n){
+    margin-right: 0;
+}
+
+.portfolio-card:nth-last-child(-n+3){
+    margin-bottom: 0;
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+
+
+
+
+
+.portfolio-card .thumb{
+    position: relative;
+    overflow: hidden;
+}
+
+.thumb .description{
+    display: flex;
+    align-items: center;
+    /* opacity: 0; */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 294px;
+    padding: 24px;
+ 
+    background: rgba(33, 150, 243, 0.9);
+    
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100%);
+}
+
+.portfolio-card:hover .description{
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+    
+
+
+
+
+
+
+
+
+.card-name{
+    border: 1px solid #EEEEEE;
+    padding: 20px 24px;
+}
+
+.card-name h3{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+}
+
+.card-name p{
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+    color:var(--text);
+    margin-top: 4px;
+}
+
+
+
+
+
+
+/* Футер */
+.footer{
+    background-color: var(--third-bg-color);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footer-content{
+    display: flex;
+}
+
+.address-block{
+    margin-top: 20px;
+}
+
+.address{
+    color:var(--bg-color);
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+}
+
+.footer-connection .link{ 
+    display: inline-block;   
+    color:rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    font-style: normal;
+    margin-top: 9px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-connection .link:hover,
+.footer-connection .link:focus { 
+    color:var(--brand-color);
+}
+
+
+.social-links{
+    margin-left: 70px;
+    margin-top: 12px;
+}
+
+.social-links .headline{
+    color: var(--bg-color);
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+}
+
+/* Соц.сети иконки в футуре*/
+
+.social-icons-footer{
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-icons-footer li + li{
+    margin-left: 10px;
+}
+
+.social-icons-footer .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background-color:rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    fill: var(--bg-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icons-footer .icons:hover,
+.social-icons-footer .icons:focus{
+    background-color: var(--brand-color);
+}
+
+
+
+
+
+
+
+
+
+
+/* Модальное окно на главной стр */
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    visibility: visible;
+    backdrop-filter: blur(10px);
+}
+
+.backdrop.is-hidden{
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.backdrop.is-hidden .modal-main{
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+
+
+
+
+
+
+
+/* Сама модалка */
+.modal-main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    width: 528px;
+   
+    background-color: var(--bg-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 40px;
+}
+
+.modal-main .close{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    fill: #000;
+    cursor: pointer;
+}
+
+.modal-main .close:hover,
+.modal-main .close:focus{
+    fill: var(--brand-color);
+}
+
+/* Контент модалки */
+
+/* стиль заголовка */
+.modal-main .headline{
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--title);
+    margin-bottom: 12px;
+}
+
+/* Стиль для коробки, внутри которой инпут, лейбл, иконка */
+.form-filed{
+    position: relative;
+    margin-top: 28px;
+}
+
+/* Стиль подписи к формам */
+.form-filed label{
+    position: absolute;
+    top: -18px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+}
+
+/* Cтиль инпутов */
+.form-filed .form-input{
+    /* display: block; */
+    width: 100%;
+    height: 40px;
+    padding: 0 10px 0 35px;
+    /* text-indent: 16px; */
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    color: var(--title);
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-filed .form-input:hover,
+.form-filed .form-input:focus{
+    border: 1px solid var(--brand-color); 
+}
+
+/* Стиль иконки в инпуте */
+.form-filed .form-input-icon{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    fill: var(--title);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*  + говорит следущее: возьми одного нижнего соседа с тегом svg */
+/* `  (тильда) говорит следущее: возьми всех нижних соседей с тегом svg*/
+/* :focus-within - означает не только фокус на этом эелементе, 
+но и фокус на любом из потомков этого элемента */
+.form-filed .form-input:hover + svg,
+.form-filed .form-input:focus + svg{
+    fill: var(--brand-color);
+    transform: translateY(-65%) ;
+}
+
+/* Отобразить валидное и невалидное заполнеие инпутов */
+.form-filed .form-input:not(:placeholder-shown):required:valid {
+    border-color: green;
+}
+.form-filed .form-input:not(:placeholder-shown):required:invalid {
+    border-color: red;
+}
+
+/* Стиль плейсхолдера */
+.form-filed textarea::placeholder,
+.form-filed input::placeholder{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+/* Cтиль инпута-Комметарий  */
+.form-filed .form-input.comment{
+    position: relative;
+    resize: vertical;
+    height: 120px;
+
+    padding: 12px 16px;
+}
+
+
+
+/* Чекбокс с соглашением */
+.agreement{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 8px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+}
+
+
+.agreement .blue{
+    margin-left: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* Скрываем дефолтный чекбокс 100% ахуенным способом*/
+.agreement .checkbox{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* Стиль чекбокса */
+.icon-check{
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin-right: 7px;
+
+    border: 1.8px solid var(--third-bg-color);
+    border-radius: 2px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox:checked + .icon-check{
+    border-color: transparent;
+    background-color: var(--brand-color);
+    background-image: url("../images/icon/mark-chek.svg");
+    background-size: contain;
+    background-origin: border-box;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agreement:hover .icon-check{
+    border-color: var(--brand-color);
+}
+
+.checkbox:checked:hover + .icon-check{
+    background-color:#188CE8;
+}
+
+
+/* Стиль кнопки в форме */
+.form-call-back .button{ 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding: 10px 32px;
+    width: 200px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+
+    color: var(--bg-color);
+    background-color: var(--brand-color);
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-call-back .button:hover,
+.form-call-back .button:focus {
+    background-color:#188CE8;
+}
+
+
+
+/* Отобразить валидное и невалидное заполнеие инпутов */
+/* .form-call-back .form-input:valid{
+    border: 1px solid green;
+}
+.form-call-back .form-input:invalid{
+    border: 1px solid red;
+}
+.form-input:not(:placeholder-shown){
+    border: 1px solid red;
+}
+.form-input:placeholder-shown{
+    border: 1px solid blue;
+} */

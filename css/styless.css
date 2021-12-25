@@ -996,12 +996,12 @@ margin-left: 30px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     color: var(--title);
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-filed .form-input:hover,
 .form-filed .form-input:focus{
-    border: 1px solid var(--brand-color); 
+    border-color: var(--brand-color); 
 }
 
 /* Стиль иконки в инпуте */

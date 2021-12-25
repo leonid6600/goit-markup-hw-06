@@ -354,7 +354,7 @@
         </address>
       </div>
       <div class="social-links">
-        <p class="headline">Присоединяйтесь</p>
+        <b class="headline">Присоединяйтесь</b>
         <ul class="social-icons-footer">
           <li>
             <a href="/" class="icons" aria-label="Ссылка на Инстаграм"> 
@@ -386,6 +386,26 @@
           </li>
         </ul>
       </div>
+
+
+
+      <!-- Модальное окно в футуоре -->
+      <div class="mailing">
+        <b class="headline">Подпишитесь на рассылку</b>      
+        <form class="mail-send-box">
+          <div class="form-mail">
+            <label hidden for="email">Почта</label>
+            <input class="form-input" type="email" name="user-email" id="email" autocomplete="email" placeholder="E-mail" required>
+          </div>
+          <button type="submit" class="button send">Подписаться
+            <svg width="24" height="24" class="icon-send">
+              <use href="./images/icon/icons.svg#icon-send"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+
     </div>
   </div>
 </footer>
@@ -402,11 +422,10 @@
         <use href="./images/icon/icons.svg#icon-close"></use>
       </svg>
     </button>
-
     <b class="headline">Оставьте свои данные, мы вам перезвоним</b>
     
-    <form class="js-speaker-form form-call-back">
 
+    <form class="js-speaker-form form-call-back">
     <div class="form-filed">
       <label for="name">Имя</label>
       <input class="form-input" type="text" name="user-name" id="name" minlength="2" placeholder=" " required autofocus>
@@ -442,20 +461,16 @@
       <label for="agreement">Соглашаюсь с рассылкой и принимаю<a href="/"></a><span class="blue">Условия договора</span></a></label>
     </div> -->
 
-
-
     <label class="agreement" for="agreement">
       <input class="checkbox" type="checkbox" name="agreement" value="agreement" id="agreement" required>
       <span class="icon-check"></span>
       Соглашаюсь с рассылкой и принимаю &nbsp;<a href="/"></a><span class="blue">Условия договора</span></a>
     </label>
       
-
-
-
     <button type="submit" class="button">Отправить</button>
-
     </form>
+
+
 
 
   </div>
@@ -464,11 +479,8 @@
 
 
 
-
 <!-- Подключение скрипта для работы модалки -->
 <script src="./js/modal.js"></script>
-
-
 
 <!-- Скрипт для временного изменения работы инпутов -->
 <script>
@@ -486,6 +498,8 @@
       });
   })();
 </script>
+
+
 
 
 </body>
